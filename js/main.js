@@ -24,25 +24,32 @@ function dropMarbles(bowl) {
   let bowls = document.querySelectorAll('#board .bowl');
   let idx = bowl.dataset.number;
   let turn = bowl.classList.contains('p1');
-  let counter = 0;
+  let marbles;
 
-  // put clicked bowl marbles in counter variable
-  do {
-    board[idx]--;
-    counter++;
-  }
-  while (board[idx] > 0);
+  marbles = board[idx];
+  board[idx] = 0;
 
+  // drop marbles into designated bowls
   do {
+    // go to next bowl
     idx++;
-    if (idx > 13) {
-      idx = 0;
-    }
+    if (idx > 13) idx = 0;
+    // if current bowl is opposite player's scorebowl, skip
+    if (turn && idx === 6) idx++;
+    if (!turn && idx === 13) idx++;
+
+    // drop marble in bowl
     board[idx]++;
+    // update bowl
     bowl.textContent = board[idx];
-    counter--;
+    // subtract one marble
+    marbles--;
   }
-  while (counter > 0);
+  while (marbles > 0);
+
+  // if last marble is dropped in players scorebowl, go again
+  if (turn && idx === 13) player = !player;
+  if (!turn && idx === 6) player = !player;
 
   updateBoard();
 }
