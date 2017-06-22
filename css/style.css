@@ -46,6 +46,7 @@ td {
   margin: 10px;
   text-align: center;
   font-size: 37px;
+  cursor: pointer;
 }
 
 tr {
@@ -56,7 +57,7 @@ td.store {
   border-radius: 30%;
 }
 
-td.p1, #player {
+td.p1{
   color: var(--p1color);
 }
 
