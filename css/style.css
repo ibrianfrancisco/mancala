@@ -1,0 +1,73 @@
+:root{
+  --p1color: #00BDBA;
+  --p2color: #8F00D3;
+};
+
+a {
+  text-decoration: none;
+  color: #FF5733;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div, h1, button, h4 {
+  margin: 30px auto 30px;
+  text-align: center;
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 70px;
+  letter-spacing: 10px;
+}
+
+h4 {
+  font-size: 15px;
+  letter-spacing: 5px;
+}
+
+table, button {
+  margin: auto;
+  font-size: 20px;
+}
+
+table#board {
+  margin-top: 40px;
+  border-collapse: inherit;
+}
+
+td {
+  border: black 2px solid;
+  height: 90px;
+  width: 90px;
+  border-radius: 40%;
+  margin: 10px;
+  text-align: center;
+  font-size: 37px;
+}
+
+tr {
+  margin: 10px;
+}
+
+td.store {
+  border-radius: 30%;
+}
+
+td.p1, #player {
+  color: var(--p1color);
+}
+
+td.p2 {
+  color: var(--p2color);
+}
+
+button {
+  background-color: #FF5733;
+  /*border: none;*/
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

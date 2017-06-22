@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Test</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <h1 class="text-center">Mancala</h1>
+
+  <table id="board">
+    <tr>
+      <td class="store bowl p2" rowspan="2" data-number="6"></td>
+      <td class="bowl p2" data-number="5"></td>
+      <td class="bowl p2" data-number="4"></td>
+      <td class="bowl p2" data-number="3"></td>
+      <td class="bowl p2" data-number="2"></td>
+      <td class="bowl p2" data-number="1"></td>
+      <td class="bowl p2" data-number="0"></td>
+      <td class="store bowl p1" rowspan="2" data-number="13"></td>
+    </tr>
+    <tr>
+      <td class="bowl p1" data-number="7"></td>
+      <td class="bowl p1" data-number="8"></td>
+      <td class="bowl p1" data-number="9"></td>
+      <td class="bowl p1" data-number="10"></td>
+      <td class="bowl p1" data-number="11"></td>
+      <td class="bowl p1" data-number="12"></td>
+    </tr>
+  </table>
+  <div>It's <span id="player"></span>'s turn</div>
+  <div id="win-msg"></div>
+  <div id="new-game"><button onclick="initilize()">New Game</button></div>
+  <script src="./js/main.js"></script>
+</body>
+</html>
