@@ -1,13 +1,13 @@
 // Variables
-  let player = true;
-  let board = [4,4,4,4,4,4,0,4,4,4,4,4,4,0];
+  let player;
+  let board;
   let log = console.log;
 
 // Elements
   const bowls = document.querySelectorAll('.bowl');
   const playerName = document.getElementById('player');
   const winMsg = document.getElementById('win-msg');
-  const newGame = document.getElementById('new-game');
+  const gameButton = document.getElementById('new-game');
 
 
 // Functions
@@ -19,39 +19,51 @@ function initilize() {
 }
 
 function dropMarbles(bowl) {
-  // board[6] is player 2's scorer
-  // board[13] is player 1's scorer
   let bowls = document.querySelectorAll('#board .bowl');
   let idx = bowl.dataset.number;
   let turn = bowl.classList.contains('p1');
-  let marbles;
-
-  marbles = board[idx];
+  let marbles = board[idx];
   board[idx] = 0;
 
   // drop marbles into designated bowls
   do {
     // go to next bowl
     idx++;
-    if (idx > 13) idx = 0;
     // if current bowl is opposite player's scorebowl, skip
+    if (idx > 13 || (!turn && idx === 13)) idx = 0;
     if (turn && idx === 6) idx++;
-    if (!turn && idx === 13) idx++;
 
-    // drop marble in bowl
-    board[idx]++;
-    // update bowl
-    bowl.textContent = board[idx];
-    // subtract one marble
-    marbles--;
+    // check for capture logic for player 1
+    if (marbles === 1 && board[idx] === 0 && turn && !(idx === 13)) {
+      // if (opponents bowl pair has anything in it or not) return
+      let opMarbles;
+      // add last marble to current player's scorebowl
+      // add opponents opposite bowl to current player's score
+
+
+      // test to see how to capture
+      // board[13]++;
+      // if (idx === 11) {
+      //   opMarbles = board[1];
+      //   board[1] = 0;
+      //   board[13] += opMarbles;
+      // }
+      log('coming from capture logic');
+      marbles--;
+    } else {
+      // drop marble in bowl
+      board[idx]++;
+      // update bowl
+      bowl.textContent = board[idx];
+      // subtract one marble
+      marbles--;
+    }
   }
   while (marbles > 0);
 
   // if last marble is dropped in players scorebowl, go again
   if (turn && idx === 13) player = !player;
   if (!turn && idx === 6) player = !player;
-
-  updateBoard();
 }
 
 function updateBoard() {
@@ -77,6 +89,6 @@ function makeMove(e) {
 
 
 // Event Handlers
-newGame.addEventListener('click', initilize());
+gameButton.addEventListener('click', initilize);
 bowls.forEach(bowl => bowl.addEventListener('click', makeMove));
-
+initilize();
