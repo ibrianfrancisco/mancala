@@ -2,7 +2,6 @@
 
 ### Description
 Wanted to create a game with Vanilla JavaScript after doing JavaScript30.
-Currently working on capturing marbles
 
 ### Technologies Used
 
