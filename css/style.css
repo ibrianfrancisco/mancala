@@ -1,36 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One');
+
+* {
+  font-family: 'Bubbler One', sans-serif;
+  font-weight: 800;
+}
+
 :root{
   --p1color: #00BDBA;
   --p2color: #8F00D3;
-};
-
-a {
-  text-decoration: none;
-  color: #FF5733;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-div, h1, button, h4 {
-  margin: 30px auto 30px;
+div, h1, button, h2 {
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 80px;
   letter-spacing: 10px;
 }
 
-h4 {
-  font-size: 15px;
-  letter-spacing: 5px;
-}
-
 table, button {
-  margin: auto;
-  font-size: 20px;
+  margin: 0 auto;
 }
 
 table#board {
@@ -49,10 +40,6 @@ td {
   cursor: pointer;
 }
 
-tr {
-  margin: 10px;
-}
-
 td.store {
   border-radius: 30%;
 }
@@ -68,6 +55,7 @@ td.p2 {
 button {
   background-color: #FF5733;
   color: white;
-  text-align: center;
   padding: 10px;
+  display: block;
+  border-radius: 10px;
 }
